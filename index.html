@@ -1,2 +1,185 @@
-<h1>Sistem Bilangan Komputer</h1>
-<p>Blog tentang konversi sistem bilangan.</p>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Bilangan Komputer</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f6f8;
+            color: #333;
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 32px;
+        }
+
+        header p {
+            font-size: 18px;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        section {
+            background-color: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+
+        h2 {
+            color: #2c3e50;
+        }
+
+        code {
+            background-color: #eee;
+            padding: 3px 6px;
+            border-radius: 4px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #2c3e50;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Sistem Bilangan Komputer</h1>
+    <p>Memahami berbagai sistem bilangan dalam ilmu komputer</p>
+</header>
+
+<main>
+
+    <section>
+        <h2>📚 Pengertian Sistem Bilangan</h2>
+        <p>
+            Sistem bilangan adalah cara untuk menyatakan suatu nilai
+            menggunakan simbol atau angka tertentu. Dalam ilmu komputer,
+            beberapa sistem bilangan yang sering digunakan adalah biner,
+            desimal, oktal, dan heksadesimal.
+        </p>
+    </section>
+
+    <section>
+        <h2>🔢 Jenis-Jenis Sistem Bilangan</h2>
+        <p><b>Biner (basis 2)</b> menggunakan angka 0 dan 1.</p>
+        <p><b>Desimal (basis 10)</b> menggunakan angka 0 sampai 9.</p>
+        <p><b>Oktal (basis 8)</b> menggunakan angka 0 sampai 7.</p>
+        <p><b>Heksadesimal (basis 16)</b> menggunakan angka 0 sampai 9 dan huruf A sampai F.</p>
+    </section>
+
+    <section>
+        <h2>💻 Konversi Sistem Bilangan</h2>
+
+        <h3>1. Biner ke Desimal</h3>
+        <p>
+            Setiap angka biner dikalikan dengan 2 sesuai nilai posisinya,
+            kemudian seluruh hasilnya dijumlahkan.
+        </p>
+
+        <p><b>Contoh:</b> 1011₂</p>
+        <p>
+            = (1 × 2³) + (0 × 2²) + (1 × 2¹) + (1 × 2⁰)
+        </p>
+        <p>
+            = 8 + 0 + 2 + 1 = <b>11₁₀</b>
+        </p>
+
+        <h3>2. Desimal ke Biner</h3>
+        <p>
+            Konversi dilakukan dengan membagi bilangan desimal dengan 2
+            secara berulang, kemudian membaca sisa pembagian dari bawah ke atas.
+        </p>
+
+        <p><b>Contoh:</b> 13₁₀ = <b>1101₂</b></p>
+
+        <h3>3. Biner ke Heksadesimal</h3>
+        <p>
+            Bilangan biner dikelompokkan menjadi 4 angka dari kanan,
+            kemudian setiap kelompok diubah menjadi satu digit heksadesimal.
+        </p>
+
+        <p><b>Contoh:</b> 1010₂ = <b>A₁₆</b></p>
+
+        <h3>4. Heksadesimal ke Biner</h3>
+        <p>
+            Setiap satu digit heksadesimal dapat diubah menjadi empat digit biner.
+        </p>
+
+        <p><b>Contoh:</b> A₁₆ = <b>1010₂</b></p>
+
+        <h3>5. Oktal ke Desimal</h3>
+        <p>
+            Setiap digit oktal dikalikan dengan 8 sesuai posisi pangkatnya,
+            kemudian hasilnya dijumlahkan.
+        </p>
+
+        <p><b>Contoh:</b> 17₈</p>
+        <p>
+            = (1 × 8¹) + (7 × 8⁰)
+            = 8 + 7
+            = <b>15₁₀</b>
+        </p>
+
+        <h3>6. Desimal ke Oktal</h3>
+        <p>
+            Bilangan desimal dibagi dengan 8 secara berulang,
+            kemudian sisa pembagian dibaca dari bawah ke atas.
+        </p>
+
+        <p><b>Contoh:</b> 15₁₀ = <b>17₈</b></p>
+    </section>
+
+    <section>
+        <h2>🔍 Perbedaan Oktal dan Heksadesimal</h2>
+
+        <p>
+            Sistem oktal menggunakan basis 8 dengan simbol 0 sampai 7,
+            sedangkan sistem heksadesimal menggunakan basis 16 dengan
+            simbol 0 sampai 9 dan A sampai F.
+        </p>
+
+        <p>
+            Dalam komputer, kedua sistem ini dapat digunakan untuk
+            mempermudah penulisan bilangan biner yang panjang.
+        </p>
+    </section>
+
+    <section>
+        <h2>📝 Kesimpulan</h2>
+        <p>
+            Sistem bilangan merupakan bagian penting dalam ilmu komputer.
+            Sistem biner digunakan sebagai dasar representasi data komputer,
+            sedangkan desimal, oktal, dan heksadesimal membantu manusia
+            membaca dan menuliskan nilai dengan lebih mudah.
+        </p>
+    </section>
+
+</main>
+
+<footer>
+    <p>Blog Sistem Bilangan Komputer</p>
+</footer>
+
+</body>
+</html>
