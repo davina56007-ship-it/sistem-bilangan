@@ -1,185 +1,236 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistem Bilangan Komputer</title>
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background-color: #f4f6f8;
-            color: #333;
-        }
-
-        header {
-            background-color: #2c3e50;
-            color: white;
-            text-align: center;
-            padding: 40px 20px;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 32px;
-        }
-
-        header p {
-            font-size: 18px;
-        }
-
-        main {
-            max-width: 900px;
-            margin: 30px auto;
-            padding: 0 20px;
-        }
-
-        section {
-            background-color: white;
-            padding: 25px;
-            margin-bottom: 20px;
-            border-radius: 10px;
-        }
-
-        h2 {
-            color: #2c3e50;
-        }
-
-        code {
-            background-color: #eee;
-            padding: 3px 6px;
-            border-radius: 4px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #2c3e50;
-            color: white;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sistem Bilangan Komputer</title>
+<style>
+body{font-family:Arial,sans-serif;margin:0;background:#f4f6f8;color:#333;line-height:1.6}
+header{background:#2c3e50;color:#fff;text-align:center;padding:40px 20px}
+header h1{margin:0;font-size:32px}
+header p{font-size:18px}
+nav{background:#34495e;text-align:center;padding:10px}
+nav a{color:#fff;text-decoration:none;margin:0 8px;font-size:14px;display:inline-block}
+main{max-width:900px;margin:30px auto;padding:0 20px}
+section{background:#fff;padding:25px;margin-bottom:20px;border-radius:10px}
+h2{color:#2c3e50}
+h3{color:#34495e}
+code,pre{background:#eee;border-radius:4px}
+code{padding:3px 6px}
+pre{padding:12px;overflow-x:auto}
+.tw{overflow-x:auto}
+table{width:100%;border-collapse:collapse;margin:15px 0}
+th,td{border:1px solid #ccc;padding:8px;text-align:center}
+th{background:#2c3e50;color:#fff}
+tr:nth-child(even){background:#f4f6f8}
+.ref li{margin-bottom:8px;text-align:left}
+footer{text-align:center;padding:20px;background:#2c3e50;color:#fff}
+</style>
 </head>
-
 <body>
-
 <header>
-    <h1>Sistem Bilangan Komputer</h1>
-    <p>Memahami berbagai sistem bilangan dalam ilmu komputer</p>
+<h1>Sistem Bilangan Komputer</h1>
+<p>Memahami berbagai sistem bilangan dalam ilmu komputer</p>
 </header>
-
+<nav>
+<a href="#pengertian">Pengertian</a><a href="#jenis">Jenis</a><a href="#satuan">Satuan Data</a><a href="#konversi">Konversi</a><a href="#aritmetika">Aritmetika</a><a href="#bertanda">Bertanda</a><a href="#float">Floating Point</a><a href="#terapan">Penerapan</a><a href="#referensi">Referensi</a>
+</nav>
 <main>
 
-    <section>
-        <h2>📚 Pengertian Sistem Bilangan</h2>
-        <p>
-            Sistem bilangan adalah cara untuk menyatakan suatu nilai
-            menggunakan simbol atau angka tertentu. Dalam ilmu komputer,
-            beberapa sistem bilangan yang sering digunakan adalah biner,
-            desimal, oktal, dan heksadesimal.
-        </p>
-    </section>
+<section id="pengertian">
+<h2>📚 Pengertian Sistem Bilangan</h2>
+<p>Sistem bilangan adalah aturan untuk menyatakan nilai dengan simbol (digit). Komputer memakai <b>sistem posisional</b>: nilai sebuah digit bergantung pada posisinya [1][2][10].</p>
+<ul>
+<li><b>Basis (radix):</b> jumlah simbol dalam sistem tersebut.</li>
+<li><b>Bobot posisi:</b> basis dipangkatkan nomor posisi (dihitung dari 0 di kanan).</li>
+</ul>
+<p>Contoh: 345₁₀ = 3×10² + 4×10¹ + 5×10⁰ = 300 + 40 + 5.</p>
+<h3>Mengapa komputer memakai biner?</h3>
+<p>Komponen elektronik paling andal membedakan dua keadaan: tegangan rendah (0) dan tinggi (1). Dua keadaan ini lebih tahan derau dan lebih murah dibuat daripada 10 tingkat tegangan [1][3][5]. Satu digit biner disebut <b>bit</b>.</p>
+<h3>Sejarah singkat</h3>
+<p>Sistem posisional berbasis 10 berkembang di India lalu menyebar lewat dunia Arab ke Eropa [10]. Leibniz (1703) menguraikan aritmetika biner secara sistematis [13], dan Shannon (1938) menunjukkan bahwa logika Boolean dapat diterapkan pada rangkaian saklar sehingga biner menjadi dasar komputer digital [12].</p>
+</section>
 
-    <section>
-        <h2>🔢 Jenis-Jenis Sistem Bilangan</h2>
-        <p><b>Biner (basis 2)</b> menggunakan angka 0 dan 1.</p>
-        <p><b>Desimal (basis 10)</b> menggunakan angka 0 sampai 9.</p>
-        <p><b>Oktal (basis 8)</b> menggunakan angka 0 sampai 7.</p>
-        <p><b>Heksadesimal (basis 16)</b> menggunakan angka 0 sampai 9 dan huruf A sampai F.</p>
-    </section>
+<section id="jenis">
+<h2>🔢 Jenis-Jenis Sistem Bilangan</h2>
+<div class="tw"><table>
+<tr><th>Sistem</th><th>Basis</th><th>Simbol</th><th>Awalan pemrograman</th></tr>
+<tr><td>Biner</td><td>2</td><td>0, 1</td><td>0b</td></tr>
+<tr><td>Oktal</td><td>8</td><td>0-7</td><td>0o (Python) / 0 (C)</td></tr>
+<tr><td>Desimal</td><td>10</td><td>0-9</td><td>-</td></tr>
+<tr><td>Heksadesimal</td><td>16</td><td>0-9, A-F</td><td>0x</td></tr>
+</table></div>
+<p>Awalan ini dapat dilihat pada dokumentasi Python [15] dan buku pemrograman sistem [9].</p>
+<h3>Tabel padanan 0-15</h3>
+<div class="tw"><table>
+<tr><th>Desimal</th><th>Biner</th><th>Oktal</th><th>Heksa</th></tr>
+<tr><td>0</td><td>0000</td><td>0</td><td>0</td></tr>
+<tr><td>1</td><td>0001</td><td>1</td><td>1</td></tr>
+<tr><td>2</td><td>0010</td><td>2</td><td>2</td></tr>
+<tr><td>3</td><td>0011</td><td>3</td><td>3</td></tr>
+<tr><td>4</td><td>0100</td><td>4</td><td>4</td></tr>
+<tr><td>5</td><td>0101</td><td>5</td><td>5</td></tr>
+<tr><td>6</td><td>0110</td><td>6</td><td>6</td></tr>
+<tr><td>7</td><td>0111</td><td>7</td><td>7</td></tr>
+<tr><td>8</td><td>1000</td><td>10</td><td>8</td></tr>
+<tr><td>9</td><td>1001</td><td>11</td><td>9</td></tr>
+<tr><td>10</td><td>1010</td><td>12</td><td>A</td></tr>
+<tr><td>11</td><td>1011</td><td>13</td><td>B</td></tr>
+<tr><td>12</td><td>1100</td><td>14</td><td>C</td></tr>
+<tr><td>13</td><td>1101</td><td>15</td><td>D</td></tr>
+<tr><td>14</td><td>1110</td><td>16</td><td>E</td></tr>
+<tr><td>15</td><td>1111</td><td>17</td><td>F</td></tr>
+</table></div>
+</section>
 
-    <section>
-        <h2>💻 Konversi Sistem Bilangan</h2>
+<section id="satuan">
+<h2>📏 Satuan Data</h2>
+<ul>
+<li><b>1 bit</b> = satu digit biner.</li>
+<li><b>1 nibble</b> = 4 bit (tepat satu digit heksadesimal).</li>
+<li><b>1 byte</b> = 8 bit, dapat menyimpan 2⁸ = 256 nilai (0-255).</li>
+<li><b>Word</b> = ukuran data yang diproses CPU sekaligus, misalnya 32 atau 64 bit [3][4].</li>
+</ul>
+<p><i>n</i> bit dapat menyimpan 2ⁿ nilai. Perhatikan: KB/MB/GB berbasis 1000, sedangkan KiB/MiB/GiB berbasis 1024 [4][9].</p>
+</section>
 
-        <h3>1. Biner ke Desimal</h3>
-        <p>
-            Setiap angka biner dikalikan dengan 2 sesuai nilai posisinya,
-            kemudian seluruh hasilnya dijumlahkan.
-        </p>
+<section id="konversi">
+<h2>💻 Konversi Sistem Bilangan</h2>
 
-        <p><b>Contoh:</b> 1011₂</p>
-        <p>
-            = (1 × 2³) + (0 × 2²) + (1 × 2¹) + (1 × 2⁰)
-        </p>
-        <p>
-            = 8 + 0 + 2 + 1 = <b>11₁₀</b>
-        </p>
+<h3>1. Biner ke Desimal</h3>
+<p>Kalikan tiap digit dengan 2 pangkat posisinya, lalu jumlahkan.</p>
+<p><b>Contoh:</b> 1011₂ = (1×2³)+(0×2²)+(1×2¹)+(1×2⁰) = 8+0+2+1 = <b>11₁₀</b></p>
 
-        <h3>2. Desimal ke Biner</h3>
-        <p>
-            Konversi dilakukan dengan membagi bilangan desimal dengan 2
-            secara berulang, kemudian membaca sisa pembagian dari bawah ke atas.
-        </p>
+<h3>2. Desimal ke Biner</h3>
+<p>Bagi dengan 2 berulang, catat sisa, baca dari bawah ke atas.</p>
+<pre>13 ÷ 2 = 6 sisa 1
+ 6 ÷ 2 = 3 sisa 0
+ 3 ÷ 2 = 1 sisa 1
+ 1 ÷ 2 = 0 sisa 1   → 13₁₀ = 1101₂</pre>
 
-        <p><b>Contoh:</b> 13₁₀ = <b>1101₂</b></p>
+<h3>3. Oktal ke Desimal</h3>
+<p><b>Contoh:</b> 17₈ = (1×8¹)+(7×8⁰) = 8+7 = <b>15₁₀</b></p>
 
-        <h3>3. Biner ke Heksadesimal</h3>
-        <p>
-            Bilangan biner dikelompokkan menjadi 4 angka dari kanan,
-            kemudian setiap kelompok diubah menjadi satu digit heksadesimal.
-        </p>
+<h3>4. Desimal ke Oktal</h3>
+<p><b>Contoh:</b> 15 ÷ 8 = 1 sisa 7; 1 ÷ 8 = 0 sisa 1. Hasil: <b>17₈</b></p>
 
-        <p><b>Contoh:</b> 1010₂ = <b>A₁₆</b></p>
+<h3>5. Heksadesimal ke Desimal</h3>
+<p><b>Contoh:</b> 2F₁₆ = (2×16¹)+(15×16⁰) = 32+15 = <b>47₁₀</b> (A=10, B=11, C=12, D=13, E=14, F=15)</p>
 
-        <h3>4. Heksadesimal ke Biner</h3>
-        <p>
-            Setiap satu digit heksadesimal dapat diubah menjadi empat digit biner.
-        </p>
+<h3>6. Desimal ke Heksadesimal</h3>
+<p><b>Contoh:</b> 255 ÷ 16 = 15 sisa 15 (F); 15 ÷ 16 = 0 sisa 15 (F). Hasil: <b>FF₁₆</b></p>
 
-        <p><b>Contoh:</b> A₁₆ = <b>1010₂</b></p>
+<h3>7. Biner ↔ Heksadesimal (kelompok 4 bit)</h3>
+<p>Biner ke heksa: kelompokkan 4 bit dari kanan. 1010 1111₂ → A | F = <b>AF₁₆</b>.<br>
+Heksa ke biner: ubah tiap digit menjadi 4 bit. 3C₁₆ = <b>0011 1100₂</b>.</p>
 
-        <h3>5. Oktal ke Desimal</h3>
-        <p>
-            Setiap digit oktal dikalikan dengan 8 sesuai posisi pangkatnya,
-            kemudian hasilnya dijumlahkan.
-        </p>
+<h3>8. Biner ↔ Oktal (kelompok 3 bit)</h3>
+<p>1101011₂ → 001 | 101 | 011 = <b>153₈</b>. Sebaliknya, 153₈ = 001 101 011 = <b>1101011₂</b>. (Cek: keduanya 107₁₀.)</p>
 
-        <p><b>Contoh:</b> 17₈</p>
-        <p>
-            = (1 × 8¹) + (7 × 8⁰)
-            = 8 + 7
-            = <b>15₁₀</b>
-        </p>
+<h3>9. Oktal ↔ Heksadesimal</h3>
+<p>Lewat perantara biner. 153₈ → 001101011 → regrup 4 bit: 0110 1011 = <b>6B₁₆</b>.</p>
 
-        <h3>6. Desimal ke Oktal</h3>
-        <p>
-            Bilangan desimal dibagi dengan 8 secara berulang,
-            kemudian sisa pembagian dibaca dari bawah ke atas.
-        </p>
+<h3>10. Bilangan pecahan</h3>
+<p>Biner ke desimal: posisi setelah koma berpangkat negatif. 101,101₂ = 4+1+0,5+0,125 = <b>5,625₁₀</b>.</p>
+<p>Desimal ke biner (bagian pecahan): kalikan 2 berulang, ambil bagian bulat.</p>
+<pre>0,625 × 2 = 1,25 → 1
+0,25  × 2 = 0,5  → 0
+0,5   × 2 = 1,0  → 1   → 0,625₁₀ = 0,101₂</pre>
+<p>Tidak semua pecahan desimal bisa persis dalam biner. Contohnya 0,1₁₀ = 0,000110011...₂ (berulang), dan ini sumber galat pembulatan [5][11].</p>
+</section>
 
-        <p><b>Contoh:</b> 15₁₀ = <b>17₈</b></p>
-    </section>
+<section id="aritmetika">
+<h2>➕ Aritmetika Biner</h2>
+<p>Aturan penjumlahan: 0+0=0, 0+1=1, 1+0=1, 1+1=10 (tulis 0, simpan 1).</p>
+<pre>  1011  (11)
++ 0110  (6)
+ ------
+ 10001  (17)</pre>
+<p>Perkalian memakai pola geser-dan-jumlah. Pengurangan pada komputer umumnya dikerjakan lewat penjumlahan dengan komplemen-2 [1][3].</p>
+</section>
 
-    <section>
-        <h2>🔍 Perbedaan Oktal dan Heksadesimal</h2>
+<section id="bertanda">
+<h2>➖ Bilangan Bertanda (Negatif)</h2>
+<div class="tw"><table>
+<tr><th>Metode</th><th>Cara</th><th>Kekurangan</th></tr>
+<tr><td>Sign-magnitude</td><td>Bit kiri = tanda (0 positif, 1 negatif)</td><td>Ada dua nol (+0 dan -0)</td></tr>
+<tr><td>Komplemen-1</td><td>Balik semua bit</td><td>Ada dua nol</td></tr>
+<tr><td><b>Komplemen-2</b></td><td>Balik semua bit, lalu tambah 1</td><td>Paling banyak dipakai</td></tr>
+</table></div>
+<p><b>Contoh -5 (8 bit, komplemen-2):</b> 5 = 00000101 → dibalik 11111010 → +1 = <b>11111011</b>.</p>
+<p>Rentang <i>n</i> bit komplemen-2: -2ⁿ⁻¹ sampai 2ⁿ⁻¹-1 (8 bit: -128 sampai +127). Penjumlahan dan pengurangan memakai rangkaian yang sama [1][3][4][9]. <b>Overflow</b> terjadi ketika hasil melebihi rentang yang bisa ditampung [9].</p>
+</section>
 
-        <p>
-            Sistem oktal menggunakan basis 8 dengan simbol 0 sampai 7,
-            sedangkan sistem heksadesimal menggunakan basis 16 dengan
-            simbol 0 sampai 9 dan A sampai F.
-        </p>
+<section id="float">
+<h2>🔬 Floating Point (IEEE 754)</h2>
+<p>Komputer modern menyimpan bilangan real dengan standar IEEE 754 [14].</p>
+<div class="tw"><table>
+<tr><th>Format</th><th>Total</th><th>Tanda</th><th>Eksponen</th><th>Mantissa</th></tr>
+<tr><td>Single</td><td>32 bit</td><td>1</td><td>8 (bias 127)</td><td>23</td></tr>
+<tr><td>Double</td><td>64 bit</td><td>1</td><td>11 (bias 1023)</td><td>52</td></tr>
+</table></div>
+<p><b>Contoh 5,625 (single):</b> 101,101₂ = 1,01101₂ × 2². Tanda 0; eksponen 2+127 = 129 = 10000001₂; mantissa 01101 + nol. Hasil: <code>0 10000001 01101000000000000000000</code> = <b>40B40000₁₆</b>.</p>
+<p>Karena keterbatasan ini, <code>0.1 + 0.2</code> di banyak bahasa pemrograman menghasilkan <code>0.30000000000000004</code> [11][15].</p>
+</section>
 
-        <p>
-            Dalam komputer, kedua sistem ini dapat digunakan untuk
-            mempermudah penulisan bilangan biner yang panjang.
-        </p>
-    </section>
+<section id="lain">
+<h2>🔤 Kode Lain yang Berkaitan</h2>
+<ul>
+<li><b>BCD:</b> tiap digit desimal ditulis 4 bit. 259₁₀ → 0010 0101 1001 [5][6].</li>
+<li><b>Kode Gray:</b> dua nilai berurutan hanya beda 1 bit [1].</li>
+<li><b>ASCII/Unicode:</b> huruf 'A' = 65₁₀ = 01000001₂ = 41₁₆ [3][9].</li>
+</ul>
+</section>
 
-    <section>
-        <h2>📝 Kesimpulan</h2>
-        <p>
-            Sistem bilangan merupakan bagian penting dalam ilmu komputer.
-            Sistem biner digunakan sebagai dasar representasi data komputer,
-            sedangkan desimal, oktal, dan heksadesimal membantu manusia
-            membaca dan menuliskan nilai dengan lebih mudah.
-        </p>
-    </section>
+<section id="terapan">
+<h2>🌍 Penerapan di Dunia Nyata</h2>
+<ul>
+<li><b>Warna web:</b> <code>#FF5733</code> = Merah FF (255), Hijau 57 (87), Biru 33 (51).</li>
+<li><b>IPv4:</b> 192.168.1.1 = 11000000.10101000.00000001.00000001.</li>
+<li><b>Izin file Linux:</b> <code>chmod 755</code> memakai oktal; 7 = 111 (rwx), 5 = 101 (r-x) [9].</li>
+<li><b>Alamat memori & debugging:</b> ditulis heksa, misalnya <code>0x7FFE4A2C</code> [4][9].</li>
+</ul>
+</section>
+
+<section id="beda">
+<h2>🔍 Perbedaan Oktal dan Heksadesimal</h2>
+<div class="tw"><table>
+<tr><th>Aspek</th><th>Oktal</th><th>Heksadesimal</th></tr>
+<tr><td>Basis</td><td>8</td><td>16</td></tr>
+<tr><td>Kelompok biner</td><td>3 bit per digit</td><td>4 bit per digit</td></tr>
+<tr><td>Kecocokan dengan byte</td><td>Kurang pas</td><td>Sangat pas (1 byte = 2 digit)</td></tr>
+<tr><td>Penggunaan modern</td><td>Izin file Unix</td><td>Memori, warna, debugging</td></tr>
+</table></div>
+</section>
+
+<section id="kesimpulan">
+<h2>📝 Kesimpulan</h2>
+<p>Biner adalah dasar representasi data komputer. Oktal dan heksadesimal adalah penulisan ringkas untuk biner yang panjang, sedangkan desimal akrab bagi manusia. Memahami konversi, komplemen-2, dan floating point membantu menghindari kesalahan seperti overflow dan galat pembulatan.</p>
+</section>
+
+<section id="referensi">
+<h2>📖 Daftar Referensi</h2>
+<ol class="ref">
+<li>Mano, M. M., &amp; Ciletti, M. D. (2017). <i>Digital Design: With an Introduction to the Verilog HDL, VHDL, and SystemVerilog</i> (6th ed.). Pearson.</li>
+<li>Knuth, D. E. (1997). <i>The Art of Computer Programming, Vol. 2: Seminumerical Algorithms</i> (3rd ed.). Addison-Wesley.</li>
+<li>Stallings, W. (2016). <i>Computer Organization and Architecture</i> (10th ed.). Pearson.</li>
+<li>Patterson, D. A., &amp; Hennessy, J. L. (2020). <i>Computer Organization and Design RISC-V Edition</i> (2nd ed.). Morgan Kaufmann.</li>
+<li>Null, L., &amp; Lobur, J. (2018). <i>The Essentials of Computer Organization and Architecture</i> (5th ed.). Jones &amp; Bartlett Learning.</li>
+<li>Floyd, T. L. (2015). <i>Digital Fundamentals</i> (11th ed.). Pearson.</li>
+<li>Tanenbaum, A. S., &amp; Austin, T. (2012). <i>Structured Computer Organization</i> (6th ed.). Pearson.</li>
+<li>Harris, S. L., &amp; Harris, D. M. (2021). <i>Digital Design and Computer Architecture: RISC-V Edition</i>. Morgan Kaufmann.</li>
+<li>Bryant, R. E., &amp; O'Hallaron, D. R. (2016). <i>Computer Systems: A Programmer's Perspective</i> (3rd ed.). Pearson.</li>
+<li>Ifrah, G. (2000). <i>The Universal History of Numbers</i>. John Wiley &amp; Sons.</li>
+<li>Goldberg, D. (1991). What every computer scientist should know about floating-point arithmetic. <i>ACM Computing Surveys, 23</i>(1), 5-48. https://doi.org/10.1145/103162.103163</li>
+<li>Shannon, C. E. (1938). A symbolic analysis of relay and switching circuits. <i>Transactions of the AIEE, 57</i>(12), 713-723.</li>
+<li>Leibniz, G. W. (1703). Explication de l'arithmétique binaire. <i>Mémoires de l'Académie Royale des Sciences</i>.</li>
+<li>IEEE. (2019). <i>IEEE Std 754-2019: IEEE Standard for Floating-Point Arithmetic</i>. IEEE.</li>
+<li>Python Software Foundation. (n.d.). <i>The Python Standard Library: Built-in Types</i>. https://docs.python.org/3/library/stdtypes.html</li>
+</ol>
+<p><small>Catatan: periksa edisi, tahun, dan halaman melalui katalog perpustakaan atau situs penerbit sebelum dipakai untuk tugas resmi.</small></p>
+</section>
 
 </main>
-
-<footer>
-    <p>Blog Sistem Bilangan Komputer</p>
-</footer>
-
+<footer><p>Blog Sistem Bilangan Komputer</p></footer>
 </body>
 </html>
