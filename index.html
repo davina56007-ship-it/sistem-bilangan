@@ -5,12 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sistem Bilangan Komputer</title>
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap');
 body{font-family:Arial,sans-serif;margin:0;background:#f4f6f8;color:#333;line-height:1.6}
-header{background:#2c3e50;color:#fff;text-align:center;padding:40px 20px}
-header h1{margin:0;font-size:32px}
-header p{font-size:18px}
-nav{background:#34495e;text-align:center;padding:10px}
-nav a{color:#fff;text-decoration:none;margin:0 8px;font-size:14px;display:inline-block}
 main{max-width:900px;margin:30px auto;padding:0 20px}
 section{background:#fff;padding:25px;margin-bottom:20px;border-radius:10px}
 h2{color:#2c3e50}
@@ -21,7 +17,7 @@ pre{padding:12px;overflow-x:auto}
 .tw{overflow-x:auto}
 table{width:100%;border-collapse:collapse;margin:15px 0}
 th,td{border:1px solid #ccc;padding:8px;text-align:center}
-th{background:#2c3e50;color:#fff}
+th{background:#2563eb;color:#fff}
 tr:nth-child(even){background:#f4f6f8}
 .ref li{margin-bottom:8px;text-align:left}
 footer{text-align:center;padding:20px;background:#2c3e50;color:#fff}
@@ -35,209 +31,111 @@ footer{text-align:center;padding:20px;background:#2c3e50;color:#fff}
 .penjelasan{margin-top:10px;padding:10px;border-radius:6px;font-size:14px;white-space:pre-line}
 .penjelasan.ok{background:#d4edda;color:#155724}
 .penjelasan.no{background:#f8d7da;color:#721c24}
-#ulang{padding:10px 18px;border:none;border-radius:6px;background:#2c3e50;color:#fff;font-size:15px;cursor:pointer}
+#ulang{padding:10px 18px;border:none;border-radius:6px;background:#2563eb;color:#fff;font-size:15px;cursor:pointer}
+
+body{background:linear-gradient(160deg,#a5d8ff,#d6eeff 50%,#8ec9f5);background-attachment:fixed}
+#home{min-height:100vh;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:30px 16px;text-align:center}
+#home h1{font-family:'Cinzel Decorative',Georgia,serif;color:#1e4f9c;text-shadow:0 2px 0 rgba(255,255,255,.7);font-size:clamp(28px,7vw,54px);letter-spacing:3px;text-transform:uppercase;line-height:1.25;margin:0 0 10px}
+#home p{color:#2b5c9e;font-size:17px;margin:0}
+.menu{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:580px;width:100%;margin-top:30px}
+.menu button{background:linear-gradient(135deg,#3b82f6,#1d4ed8);color:#fff;box-shadow:0 4px 10px rgba(29,78,216,.3);border:none;border-radius:999px;padding:14px 10px;font-size:13px;font-weight:bold;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;transition:.2s}
+.menu button:hover{background:linear-gradient(135deg,#60a5fa,#2563eb);transform:translateY(-3px)}
+@media(max-width:480px){.menu{grid-template-columns:1fr}}
+#isi{display:none}
+section{display:none}
+section.show{display:block}
+.bar{margin:0 0 15px}
+.kembali{background:linear-gradient(135deg,#3b82f6,#1d4ed8);color:#fff;border:none;border-radius:999px;padding:10px 20px;font-weight:bold;cursor:pointer;font-size:14px}
+.kembali:hover{background:linear-gradient(135deg,#60a5fa,#2563eb)}
+footer{background:transparent;color:#2b5c9e}
+
+#home,#isi,footer{position:relative;z-index:1}
+footer{color:#fff;text-shadow:0 1px 3px rgba(0,40,100,.6)}
+section{border-top:4px solid #60a5fa}
+.hias{font-size:34px;letter-spacing:8px;margin-bottom:8px}
+.laut{position:fixed;left:0;right:0;bottom:0;height:150px;pointer-events:none;z-index:0;overflow:hidden}
+.laut svg{position:absolute;bottom:0;left:0;width:200%;height:100%}
+.w1{animation:gelombang 16s linear infinite}
+.w2{animation:gelombang 10s linear infinite reverse}
+@keyframes gelombang{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.gelembung{position:fixed;bottom:-40px;border-radius:50%;background:rgba(255,255,255,.4);border:1px solid rgba(255,255,255,.85);pointer-events:none;z-index:0;animation:naik linear infinite}
+@keyframes naik{from{transform:translateY(0)}to{transform:translateY(-115vh)}}
+.ikan{position:fixed;left:0;font-size:30px;pointer-events:none;z-index:0;animation:renang linear infinite}
+@keyframes renang{from{transform:translateX(110vw)}to{transform:translateX(-90px)}}
+@media(prefers-reduced-motion:reduce){.w1,.w2,.gelembung,.ikan{animation:none}}
+
+#ombak{position:fixed;left:0;top:0;width:100%;height:100vh;z-index:100;pointer-events:none;background:linear-gradient(180deg,#3b82f6,#1d4ed8);transform:translateY(calc(100% + 90px));display:flex;align-items:center;justify-content:center;font-size:64px}
+.tepi{position:absolute;left:0;right:0;height:80px;overflow:hidden}
+.tepi.a{top:-79px}
+.tepi.b{bottom:-79px;transform:scaleY(-1)}
+.tepi svg{position:absolute;left:0;bottom:0;width:200%;height:100%;animation:gelombang 4s linear infinite}
+@media(prefers-reduced-motion:reduce){#ombak{display:none}}
+#posisi{margin-left:12px;font-weight:bold;color:#1e4f9c}
+#alur{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 15px}
+#alur button{width:36px;height:36px;border-radius:50%;border:2px solid #3b82f6;background:#fff;color:#1d4ed8;font-weight:bold;cursor:pointer}
+#alur button.lewat{background:#dbeafe}
+#alur button.aktif{background:linear-gradient(135deg,#3b82f6,#1d4ed8);color:#fff}
+.nav2{display:flex;gap:10px;justify-content:space-between;flex-wrap:wrap;margin:15px 0 0}
+.alur-btn{background:linear-gradient(135deg,#3b82f6,#1d4ed8);color:#fff;border:none;border-radius:999px;padding:10px 20px;font-weight:bold;cursor:pointer;font-size:14px}
+.alur-btn:hover{background:linear-gradient(135deg,#60a5fa,#2563eb)}
 </style>
 </head>
 <body>
-<header>
+<div class="laut" aria-hidden="true"><svg class="w1" viewBox="0 0 1200 120" preserveAspectRatio="none"><path fill="#7cc0f5" fill-opacity=".7" d="M0,60 C100,20 200,100 300,60 S500,100 600,60 C700,20 800,100 900,60 S1100,100 1200,60 V120 H0Z"/></svg><svg class="w2" viewBox="0 0 1200 120" preserveAspectRatio="none"><path fill="#3b82f6" fill-opacity=".75" d="M0,60 C100,20 200,100 300,60 S500,100 600,60 C700,20 800,100 900,60 S1100,100 1200,60 V120 H0Z" transform="translate(0,22)"/></svg></div>
+<span class="ikan" style="top:22%;animation-duration:34s">🐠</span>
+<span class="ikan" style="top:58%;animation-duration:46s;animation-delay:-15s">🐟</span>
+<span class="ikan" style="top:40%;animation-duration:60s;animation-delay:-30s;font-size:38px">🐳</span>
+<div id="home">
+<div class="hias">🐚 🌊 🐠 🐙 🐚</div>
 <h1>Sistem Bilangan Komputer</h1>
-<p>Memahami berbagai sistem bilangan dalam ilmu komputer</p>
-</header>
-<nav>
-<a href="#pengertian">Pengertian</a><a href="#jenis">Jenis</a><a href="#satuan">Satuan Data</a><a href="#konversi">Konversi</a><a href="#aritmetika">Aritmetika</a><a href="#bertanda">Bertanda</a><a href="#float">Floating Point</a><a href="#terapan">Penerapan</a><a href="#kuis">Latihan Soal</a><a href="#referensi">Referensi</a>
-</nav>
-<main>
+<p>Pilih materi untuk mulai belajar</p>
+<div class="menu">
+<button>1. Konsep Dasar</button>
+<button>2. Biner ke Desimal</button>
+<button>3. Desimal ke Biner</button>
+<button>4. Biner ke Heksa</button>
+<button>5. Heksa ke Biner</button>
+<button>6. Oktal ke Desimal</button>
+<button>7. Desimal ke Oktal</button>
+<button>8. Oktal vs Heksa</button>
+<button>9. Latihan Soal</button>
+<button>10. Kesimpulan &amp; Referensi</button>
+</div>
+</div>
 
-<section id="pengertian">
-<h2>📚 Pengertian Sistem Bilangan</h2>
-<p>Sistem bilangan adalah aturan untuk menyatakan nilai dengan simbol (digit). Komputer memakai <b>sistem posisional</b>: nilai sebuah digit bergantung pada posisinya [1][2][10].</p>
-<ul>
-<li><b>Basis (radix):</b> jumlah simbol dalam sistem tersebut.</li>
-<li><b>Bobot posisi:</b> basis dipangkatkan nomor posisi (dihitung dari 0 di kanan).</li>
-</ul>
-<p>Contoh: 345₁₀ = 3×10² + 4×10¹ + 5×10⁰ = 300 + 40 + 5.</p>
-<h3>Mengapa komputer memakai biner?</h3>
-<p>Komponen elektronik paling andal membedakan dua keadaan: tegangan rendah (0) dan tinggi (1). Dua keadaan ini lebih tahan derau dan lebih murah dibuat daripada 10 tingkat tegangan [1][3][5]. Satu digit biner disebut <b>bit</b>.</p>
-<h3>Sejarah singkat</h3>
-<p>Sistem posisional berbasis 10 berkembang di India lalu menyebar lewat dunia Arab ke Eropa [10]. Leibniz (1703) menguraikan aritmetika biner secara sistematis [13], dan Shannon (1938) menunjukkan bahwa logika Boolean dapat diterapkan pada rangkaian saklar sehingga biner menjadi dasar komputer digital [12].</p>
-</section>
-
-<section id="jenis">
-<h2>🔢 Jenis-Jenis Sistem Bilangan</h2>
-<div class="tw"><table>
-<tr><th>Sistem</th><th>Basis</th><th>Simbol</th><th>Awalan pemrograman</th></tr>
-<tr><td>Biner</td><td>2</td><td>0, 1</td><td>0b</td></tr>
-<tr><td>Oktal</td><td>8</td><td>0-7</td><td>0o (Python) / 0 (C)</td></tr>
-<tr><td>Desimal</td><td>10</td><td>0-9</td><td>-</td></tr>
-<tr><td>Heksadesimal</td><td>16</td><td>0-9, A-F</td><td>0x</td></tr>
-</table></div>
-<p>Awalan ini dapat dilihat pada dokumentasi Python [15] dan buku pemrograman sistem [9].</p>
-<h3>Tabel padanan 0-15</h3>
-<div class="tw"><table>
-<tr><th>Desimal</th><th>Biner</th><th>Oktal</th><th>Heksa</th></tr>
-<tr><td>0</td><td>0000</td><td>0</td><td>0</td></tr>
-<tr><td>1</td><td>0001</td><td>1</td><td>1</td></tr>
-<tr><td>2</td><td>0010</td><td>2</td><td>2</td></tr>
-<tr><td>3</td><td>0011</td><td>3</td><td>3</td></tr>
-<tr><td>4</td><td>0100</td><td>4</td><td>4</td></tr>
-<tr><td>5</td><td>0101</td><td>5</td><td>5</td></tr>
-<tr><td>6</td><td>0110</td><td>6</td><td>6</td></tr>
-<tr><td>7</td><td>0111</td><td>7</td><td>7</td></tr>
-<tr><td>8</td><td>1000</td><td>10</td><td>8</td></tr>
-<tr><td>9</td><td>1001</td><td>11</td><td>9</td></tr>
-<tr><td>10</td><td>1010</td><td>12</td><td>A</td></tr>
-<tr><td>11</td><td>1011</td><td>13</td><td>B</td></tr>
-<tr><td>12</td><td>1100</td><td>14</td><td>C</td></tr>
-<tr><td>13</td><td>1101</td><td>15</td><td>D</td></tr>
-<tr><td>14</td><td>1110</td><td>16</td><td>E</td></tr>
-<tr><td>15</td><td>1111</td><td>17</td><td>F</td></tr>
-</table></div>
-</section>
-
-<section id="satuan">
-<h2>📏 Satuan Data</h2>
-<ul>
-<li><b>1 bit</b> = satu digit biner.</li>
-<li><b>1 nibble</b> = 4 bit (tepat satu digit heksadesimal).</li>
-<li><b>1 byte</b> = 8 bit, dapat menyimpan 2⁸ = 256 nilai (0-255).</li>
-<li><b>Word</b> = ukuran data yang diproses CPU sekaligus, misalnya 32 atau 64 bit [3][4].</li>
-</ul>
-<p><i>n</i> bit dapat menyimpan 2ⁿ nilai. Perhatikan: KB/MB/GB berbasis 1000, sedangkan KiB/MiB/GiB berbasis 1024 [4][9].</p>
-</section>
-
-<section id="konversi">
-<h2>💻 Konversi Sistem Bilangan</h2>
-
-<h3>1. Biner ke Desimal</h3>
-<p>Kalikan tiap digit dengan 2 pangkat posisinya, lalu jumlahkan.</p>
-<p><b>Contoh:</b> 1011₂ = (1×2³)+(0×2²)+(1×2¹)+(1×2⁰) = 8+0+2+1 = <b>11₁₀</b></p>
-
-<h3>2. Desimal ke Biner</h3>
-<p>Bagi dengan 2 berulang, catat sisa, baca dari bawah ke atas.</p>
-<pre>13 ÷ 2 = 6 sisa 1
- 6 ÷ 2 = 3 sisa 0
- 3 ÷ 2 = 1 sisa 1
- 1 ÷ 2 = 0 sisa 1   → 13₁₀ = 1101₂</pre>
-
-<h3>3. Oktal ke Desimal</h3>
-<p><b>Contoh:</b> 17₈ = (1×8¹)+(7×8⁰) = 8+7 = <b>15₁₀</b></p>
-
-<h3>4. Desimal ke Oktal</h3>
-<p><b>Contoh:</b> 15 ÷ 8 = 1 sisa 7; 1 ÷ 8 = 0 sisa 1. Hasil: <b>17₈</b></p>
-
-<h3>5. Heksadesimal ke Desimal</h3>
-<p><b>Contoh:</b> 2F₁₆ = (2×16¹)+(15×16⁰) = 32+15 = <b>47₁₀</b> (A=10, B=11, C=12, D=13, E=14, F=15)</p>
-
-<h3>6. Desimal ke Heksadesimal</h3>
-<p><b>Contoh:</b> 255 ÷ 16 = 15 sisa 15 (F); 15 ÷ 16 = 0 sisa 15 (F). Hasil: <b>FF₁₆</b></p>
-
-<h3>7. Biner ↔ Heksadesimal (kelompok 4 bit)</h3>
-<p>Biner ke heksa: kelompokkan 4 bit dari kanan. 1010 1111₂ → A | F = <b>AF₁₆</b>.<br>
-Heksa ke biner: ubah tiap digit menjadi 4 bit. 3C₁₆ = <b>0011 1100₂</b>.</p>
-
-<h3>8. Biner ↔ Oktal (kelompok 3 bit)</h3>
-<p>1101011₂ → 001 | 101 | 011 = <b>153₈</b>. Sebaliknya, 153₈ = 001 101 011 = <b>1101011₂</b>. (Cek: keduanya 107₁₀.)</p>
-
-<h3>9. Oktal ↔ Heksadesimal</h3>
-<p>Lewat perantara biner. 153₈ → 001101011 → regrup 4 bit: 0110 1011 = <b>6B₁₆</b>.</p>
-
-<h3>10. Bilangan pecahan</h3>
-<p>Biner ke desimal: posisi setelah koma berpangkat negatif. 101,101₂ = 4+1+0,5+0,125 = <b>5,625₁₀</b>.</p>
-<p>Desimal ke biner (bagian pecahan): kalikan 2 berulang, ambil bagian bulat.</p>
-<pre>0,625 × 2 = 1,25 → 1
-0,25  × 2 = 0,5  → 0
-0,5   × 2 = 1,0  → 1   → 0,625₁₀ = 0,101₂</pre>
-<p>Tidak semua pecahan desimal bisa persis dalam biner. Contohnya 0,1₁₀ = 0,000110011...₂ (berulang), dan ini sumber galat pembulatan [5][11].</p>
-</section>
-
-<section id="aritmetika">
-<h2>➕ Aritmetika Biner</h2>
-<p>Aturan penjumlahan: 0+0=0, 0+1=1, 1+0=1, 1+1=10 (tulis 0, simpan 1).</p>
-<pre>  1011  (11)
-+ 0110  (6)
- ------
- 10001  (17)</pre>
-<p>Perkalian memakai pola geser-dan-jumlah. Pengurangan pada komputer umumnya dikerjakan lewat penjumlahan dengan komplemen-2 [1][3].</p>
-</section>
-
-<section id="bertanda">
-<h2>➖ Bilangan Bertanda (Negatif)</h2>
-<div class="tw"><table>
-<tr><th>Metode</th><th>Cara</th><th>Kekurangan</th></tr>
-<tr><td>Sign-magnitude</td><td>Bit kiri = tanda (0 positif, 1 negatif)</td><td>Ada dua nol (+0 dan -0)</td></tr>
-<tr><td>Komplemen-1</td><td>Balik semua bit</td><td>Ada dua nol</td></tr>
-<tr><td><b>Komplemen-2</b></td><td>Balik semua bit, lalu tambah 1</td><td>Paling banyak dipakai</td></tr>
-</table></div>
-<p><b>Contoh -5 (8 bit, komplemen-2):</b> 5 = 00000101 → dibalik 11111010 → +1 = <b>11111011</b>.</p>
-<p>Rentang <i>n</i> bit komplemen-2: -2ⁿ⁻¹ sampai 2ⁿ⁻¹-1 (8 bit: -128 sampai +127). Penjumlahan dan pengurangan memakai rangkaian yang sama [1][3][4][9]. <b>Overflow</b> terjadi ketika hasil melebihi rentang yang bisa ditampung [9].</p>
-</section>
-
-<section id="float">
-<h2>🔬 Floating Point (IEEE 754)</h2>
-<p>Komputer modern menyimpan bilangan real dengan standar IEEE 754 [14].</p>
-<div class="tw"><table>
-<tr><th>Format</th><th>Total</th><th>Tanda</th><th>Eksponen</th><th>Mantissa</th></tr>
-<tr><td>Single</td><td>32 bit</td><td>1</td><td>8 (bias 127)</td><td>23</td></tr>
-<tr><td>Double</td><td>64 bit</td><td>1</td><td>11 (bias 1023)</td><td>52</td></tr>
-</table></div>
-<p><b>Contoh 5,625 (single):</b> 101,101₂ = 1,01101₂ × 2². Tanda 0; eksponen 2+127 = 129 = 10000001₂; mantissa 01101 + nol. Hasil: <code>0 10000001 01101000000000000000000</code> = <b>40B40000₁₆</b>.</p>
-<p>Karena keterbatasan ini, <code>0.1 + 0.2</code> di banyak bahasa pemrograman menghasilkan <code>0.30000000000000004</code> [11][15].</p>
-</section>
-
-<section id="lain">
-<h2>🔤 Kode Lain yang Berkaitan</h2>
-<ul>
-<li><b>BCD:</b> tiap digit desimal ditulis 4 bit. 259₁₀ → 0010 0101 1001 [5][6].</li>
-<li><b>Kode Gray:</b> dua nilai berurutan hanya beda 1 bit [1].</li>
-<li><b>ASCII/Unicode:</b> huruf 'A' = 65₁₀ = 01000001₂ = 41₁₆ [3][9].</li>
-</ul>
-</section>
-
-<section id="terapan">
-<h2>🌍 Penerapan di Dunia Nyata</h2>
-<ul>
-<li><b>Warna web:</b> <code>#FF5733</code> = Merah FF (255), Hijau 57 (87), Biru 33 (51).</li>
-<li><b>IPv4:</b> 192.168.1.1 = 11000000.10101000.00000001.00000001.</li>
-<li><b>Izin file Linux:</b> <code>chmod 755</code> memakai oktal; 7 = 111 (rwx), 5 = 101 (r-x) [9].</li>
-<li><b>Alamat memori &amp; debugging:</b> ditulis heksa, misalnya <code>0x7FFE4A2C</code> [4][9].</li>
-</ul>
-</section>
-
-<section id="beda">
-<h2>🔍 Perbedaan Oktal dan Heksadesimal</h2>
-<div class="tw"><table>
-<tr><th>Aspek</th><th>Oktal</th><th>Heksadesimal</th></tr>
-<tr><td>Basis</td><td>8</td><td>16</td></tr>
-<tr><td>Kelompok biner</td><td>3 bit per digit</td><td>4 bit per digit</td></tr>
-<tr><td>Kecocokan dengan byte</td><td>Kurang pas</td><td>Sangat pas (1 byte = 2 digit)</td></tr>
-<tr><td>Penggunaan modern</td><td>Izin file Unix</td><td>Memori, warna, debugging</td></tr>
-</table></div>
-</section>
-
-<section id="kuis">
-<h2>🧪 Latihan Soal</h2>
-<p>Pilih satu jawaban. Hijau berarti benar, merah berarti salah, dan penjelasan akan muncul.</p>
-<div id="daftar-soal"></div>
-<p id="skor" style="font-weight:bold;font-size:18px"></p>
-<button id="ulang" style="display:none">🔄 Ulangi Latihan</button>
+<main id="isi">
+<div class="bar"><button class="kembali">← Menu</button><span id="posisi"></span></div>
+<div id="alur"></div>
+<section id="konsep"><h2>📚 Konsep Dasar: Sistem Bilangan Posisional</h2><p>Semua konversi dalam materi ini bertumpu pada satu ide: nilai sebuah angka bergantung pada posisinya. Setiap posisi punya bobot berupa pangkat dari basis (radix), sebagaimana dijelaskan dalam <b>(Knuth, 1997 [11])</b> dan <b>(Rosen, 2019 [9])</b>.</p><p><b>Rumus umum bilangan berbasis b:</b></p><pre>N = Σ dᵢ × bⁱ, dengan i berjalan dari −m sampai n</pre><p>Posisi di kiri koma dihitung mulai dari pangkat 0, 1, 2, ... ke kiri. Posisi di kanan koma memakai pangkat −1, −2, −3, ... ke kanan.</p><h3>Empat sistem bilangan</h3><div class="tw"><table><tr><th>Sistem</th><th>Basis</th><th>Simbol</th></tr><tr><td>Biner</td><td>2</td><td>0, 1</td></tr><tr><td>Oktal</td><td>8</td><td>0–7</td></tr><tr><td>Desimal</td><td>10</td><td>0–9</td></tr><tr><td>Heksadesimal</td><td>16</td><td>0–9, A–F</td></tr></table></div><h3>Tabel padanan 0–15</h3><div class="tw"><table><tr><th>Desimal</th><th>Biner</th><th>Oktal</th><th>Heksa</th></tr><tr><td>0</td><td>0000</td><td>0</td><td>0</td></tr><tr><td>1</td><td>0001</td><td>1</td><td>1</td></tr><tr><td>2</td><td>0010</td><td>2</td><td>2</td></tr><tr><td>3</td><td>0011</td><td>3</td><td>3</td></tr><tr><td>4</td><td>0100</td><td>4</td><td>4</td></tr><tr><td>5</td><td>0101</td><td>5</td><td>5</td></tr><tr><td>6</td><td>0110</td><td>6</td><td>6</td></tr><tr><td>7</td><td>0111</td><td>7</td><td>7</td></tr><tr><td>8</td><td>1000</td><td>10</td><td>8</td></tr><tr><td>9</td><td>1001</td><td>11</td><td>9</td></tr><tr><td>10</td><td>1010</td><td>12</td><td>A</td></tr><tr><td>11</td><td>1011</td><td>13</td><td>B</td></tr><tr><td>12</td><td>1100</td><td>14</td><td>C</td></tr><tr><td>13</td><td>1101</td><td>15</td><td>D</td></tr><tr><td>14</td><td>1110</td><td>16</td><td>E</td></tr><tr><td>15</td><td>1111</td><td>17</td><td>F</td></tr></table></div></section>
+<section id="bd"><h2>🔢 1. Konversi Biner (Basis 2) ke Desimal (Basis 10)</h2><h3>Pengertian</h3><p>Konversi ini mengubah bilangan yang hanya terdiri dari digit 0 dan 1 menjadi bilangan yang kita pakai sehari-hari. Caranya dengan menjumlahkan bobot 2ⁿ pada setiap posisi yang berisi digit 1. Sistem biner menjadi dasar representasi data pada komputer digital karena rangkaian elektronik paling andal membedakan dua keadaan <b>(Mano &amp; Ciletti, 2013 [1]; Floyd, 2015 [2])</b>. Konversi biner ke desimal dibahas sebagai teknik dasar dalam buku sistem digital <b>(Tocci dkk., 2016 [3])</b>, buku organisasi komputer <b>(Stallings, 2016 [4])</b>, dan buku matematika diskrit berbahasa Indonesia <b>(Munir, 2012 [10])</b>. Penjelasan ringkas juga tersedia di <b>(Wikipedia, "Binary number" [12])</b>.</p><h3>Rumus</h3><pre>(aₙ aₙ₋₁ … a₁ a₀ , a₋₁ … a₋ₘ)₂ = Σ aᵢ × 2ⁱ</pre><p>Bobot posisi: …128, 64, 32, 16, 8, 4, 2, 1 , 0,5; 0,25; 0,125; …</p><h3>Cara Pengerjaan</h3><p><b>Metode bobot posisi</b></p><ol><li>Tulis bobot 2ⁱ di bawah tiap digit, mulai dari 2⁰ di digit paling kanan sebelum koma.</li><li>Kalikan tiap digit dengan bobotnya.</li><li>Jumlahkan semua hasil.</li></ol><p><b>Metode Horner</b> (perkalian berulang): mulai dari digit paling kiri, lalu untuk tiap digit berikutnya kalikan hasil sebelumnya dengan 2 dan tambahkan digit tersebut.</p><h3>Contoh Soal</h3><p><b>Soal 1.</b> Ubah 1011₂ ke desimal. = 1·8 + 0·4 + 1·2 + 1·1 = 8 + 0 + 2 + 1 = <b>11₁₀</b></p><p><b>Soal 2.</b> Ubah 110101₂ ke desimal. = 32 + 16 + 0 + 4 + 0 + 1 = <b>53₁₀</b></p><p><b>Soal 3.</b> Ubah 11111111₂ ke desimal. = 128 + 64 + 32 + 16 + 8 + 4 + 2 + 1 = <b>255₁₀</b></p><p><b>Soal 4 (pecahan).</b> Ubah 101101,101₂ ke desimal. Bagian bulat: 32 + 0 + 8 + 4 + 0 + 1 = 45. Bagian pecahan: 1·0,5 + 0·0,25 + 1·0,125 = 0,625. Hasil: <b>45,625₁₀</b></p><p><b>Soal 5 (Horner).</b> Ubah 1101101₂ ke desimal. 1 → 1×2+1 = 3 → 3×2+0 = 6 → 6×2+1 = 13 → 13×2+1 = 27 → 27×2+0 = 54 → 54×2+1 = <b>109₁₀</b></p></section>
+<section id="db"><h2>🔄 2. Konversi Desimal (Basis 10) ke Biner (Basis 2)</h2><h3>Pengertian</h3><p>Konversi ini mengubah bilangan desimal menjadi barisan digit 0 dan 1. Bagian bulat diubah dengan pembagian berulang oleh 2, sedangkan bagian pecahan dengan perkalian berulang oleh 2. Algoritma pembagian berulang adalah prosedur standar untuk mengubah basis bilangan bulat <b>(Rosen, 2019 [9])</b>. <b>Knuth (1997 [11])</b> membahas teori sistem bilangan posisional dan konversi basis secara formal, sedangkan <b>Null &amp; Lobur (2014 [7])</b> dan <b>Wakerly (2006 [6])</b> menyajikan prosedur praktisnya untuk bilangan bulat maupun pecahan. Ulasan ringkas tersedia juga di <b>(Weisstein, "Base", MathWorld [15])</b>.</p><h3>Rumus / Aturan</h3><p><b>Bagian bulat:</b> bagi bilangan dengan 2 terus-menerus sampai hasil bagi 0. Catat sisa tiap langkah, lalu baca sisa dari bawah ke atas.</p><p><b>Bagian pecahan:</b> kalikan pecahan dengan 2. Ambil bagian bulat hasilnya (0 atau 1) sebagai digit, lalu lanjutkan dengan sisa pecahannya. Baca digit dari atas ke bawah. Berhenti jika sisa pecahan 0 atau presisi sudah cukup.</p><h3>Contoh Soal</h3><p><b>1.</b> Ubah 25₁₀ ke biner.</p><div class="tw"><table><tr><th>Pembagian</th><th>Hasil</th><th>Sisa</th></tr><tr><td>25 ÷ 2</td><td>12</td><td>1</td></tr><tr><td>12 ÷ 2</td><td>6</td><td>0</td></tr><tr><td>6 ÷ 2</td><td>3</td><td>0</td></tr><tr><td>3 ÷ 2</td><td>1</td><td>1</td></tr><tr><td>1 ÷ 2</td><td>0</td><td>1</td></tr></table></div><p>Dibaca dari bawah ke atas: <b>11001₂</b>. Pemeriksaan: 16 + 8 + 1 = 25 ✔</p><p><b>2.</b> Ubah 156₁₀ ke biner.</p><div class="tw"><table><tr><th>Pembagian</th><th>Hasil</th><th>Sisa</th></tr><tr><td>156 ÷ 2</td><td>78</td><td>0</td></tr><tr><td>78 ÷ 2</td><td>39</td><td>0</td></tr><tr><td>39 ÷ 2</td><td>19</td><td>1</td></tr><tr><td>19 ÷ 2</td><td>9</td><td>1</td></tr><tr><td>9 ÷ 2</td><td>4</td><td>1</td></tr><tr><td>4 ÷ 2</td><td>2</td><td>0</td></tr><tr><td>2 ÷ 2</td><td>1</td><td>0</td></tr><tr><td>1 ÷ 2</td><td>0</td><td>1</td></tr></table></div><p>Dibaca dari bawah ke atas: <b>10011100₂</b>. Pemeriksaan: 128 + 16 + 8 + 4 = 156 ✔</p><p><b>3 (pecahan).</b> Ubah 0,6875₁₀ ke biner.</p><div class="tw"><table><tr><th>Perkalian</th><th>Hasil</th><th>Digit</th></tr><tr><td>0,6875 × 2</td><td>1,375</td><td>1</td></tr><tr><td>0,375 × 2</td><td>0,75</td><td>0</td></tr><tr><td>0,75 × 2</td><td>1,5</td><td>1</td></tr><tr><td>0,5 × 2</td><td>1,0</td><td>1</td></tr></table></div><p>Hasil: <b>0,1011₂</b>. Pemeriksaan: 0,5 + 0,125 + 0,0625 = 0,6875 ✔</p><p><b>4 (campuran).</b> Ubah 13,375₁₀ ke biner.</p><p>Bagian bulat (dibagi 2, sisa dibaca dari bawah ke atas):</p><div class="tw"><table><tr><th>Pembagian</th><th>Hasil</th><th>Sisa</th></tr><tr><td>13 ÷ 2</td><td>6</td><td>1</td></tr><tr><td>6 ÷ 2</td><td>3</td><td>0</td></tr><tr><td>3 ÷ 2</td><td>1</td><td>1</td></tr><tr><td>1 ÷ 2</td><td>0</td><td>1</td></tr></table></div><p>Bagian pecahan (dikali 2, digit dibaca dari atas ke bawah):</p><div class="tw"><table><tr><th>Perkalian</th><th>Hasil</th><th>Digit</th></tr><tr><td>0,375 × 2</td><td>0,75</td><td>0</td></tr><tr><td>0,75 × 2</td><td>1,5</td><td>1</td></tr><tr><td>0,5 × 2</td><td>1,0</td><td>1</td></tr></table></div><p>Bagian bulat = 1101₂ dan bagian pecahan = 0,011₂. Hasil: <b>1101,011₂</b></p><p><b>5 (pecahan tak berhingga).</b> Ubah 0,1₁₀ ke biner.</p><div class="tw"><table><tr><th>Perkalian</th><th>Hasil</th><th>Digit</th></tr><tr><td>0,1 × 2</td><td>0,2</td><td>0</td></tr><tr><td>0,2 × 2</td><td>0,4</td><td>0</td></tr><tr><td>0,4 × 2</td><td>0,8</td><td>0</td></tr><tr><td>0,8 × 2</td><td>1,6</td><td>1</td></tr><tr><td>0,6 × 2</td><td>1,2</td><td>1</td></tr><tr><td>0,2 × 2</td><td>0,4</td><td>0</td></tr></table></div><p>Sisa 0,2 muncul lagi, sehingga pola digit berulang. Hasil: <b>0,0001100110011…₂ = 0,0(0011)₂</b> berulang. Karena itu sebagian bilangan desimal pecahan tidak bisa disimpan secara eksak di komputer.</p></section>
+<section id="bh"><h2>🧩 3. Konversi Biner (Basis 2) ke Heksadesimal (Basis 16)</h2><h3>Pengertian</h3><p>Karena 16 = 2⁴, setiap 4 digit biner (satu nibble) tepat setara dengan 1 digit heksadesimal. Konversi ini hanya berupa pengelompokan, tanpa hitungan aritmetika. Itulah sebabnya heksadesimal dipakai sebagai singkatan biner yang ringkas di dunia komputer, misalnya untuk alamat memori dan kode warna <b>(Mano &amp; Ciletti, 2013 [1]; Tanenbaum &amp; Austin, 2013 [5]; Patterson &amp; Hennessy, 2014 [8])</b>. <b>Floyd (2015 [2])</b> dan <b>(Wikipedia, "Hexadecimal" [14])</b> menjelaskan hubungan ini secara rinci.</p><h3>Rumus / Aturan</h3><pre>Heksa = kelompok 4 bit → 1 simbol (0–F)</pre><h3>Cara Pengerjaan</h3><ol><li>Kelompokkan bit 4-4 dari kanan ke kiri untuk bagian bulat.</li><li>Kelompokkan bagian pecahan dari kiri ke kanan.</li><li>Tambahkan angka 0 pada kelompok yang kurang dari 4 bit (di kiri untuk bagian bulat, di kanan untuk pecahan).</li><li>Ganti tiap kelompok dengan simbol heksa dari tabel.</li></ol><h3>Contoh Soal</h3><p><b>Soal 1.</b> 11010110₂ → heksa: 1101 | 0110 → D | 6 = <b>D6₁₆</b> (pemeriksaan: 214 = 13·16 + 6 ✔)</p><p><b>Soal 2.</b> 1011101₂ → heksa. Padding: 0101 | 1101 → 5 | D = <b>5D₁₆</b> (= 93₁₀ ✔)</p><p><b>Soal 3.</b> 111110100011₂ → heksa: 1111 | 1010 | 0011 → F | A | 3 = <b>FA3₁₆</b></p><p><b>Soal 4 (pecahan).</b> 101101,1011₂ → heksa. Bulat: 0010 | 1101 → 2D. Pecahan: 1011 → B. Hasil: <b>2D,B₁₆</b></p><p><b>Soal 5.</b> 1110010101111₂ → heksa. Padding: 0001 | 1100 | 1010 | 1111 → 1 | C | A | F = <b>1CAF₁₆</b></p></section>
+<section id="hb"><h2>🔁 4. Konversi Heksadesimal (Basis 16) ke Biner (Basis 2)</h2><h3>Pengertian</h3><p>Ini adalah kebalikan konversi sebelumnya: setiap digit heksa diganti dengan 4 digit biner. Tidak diperlukan perkalian atau pembagian <b>(Floyd, 2015 [2]; Wakerly, 2006 [6]; Null &amp; Lobur, 2014 [7])</b>. Heksadesimal banyak dipakai dalam notasi alamat memori, warna web, dan alamat MAC <b>(Tanenbaum &amp; Austin, 2013 [5]; Wikipedia, "Hexadecimal" [14])</b>.</p><h3>Rumus / Aturan</h3><pre>1 digit heksa → 4 bit</pre><h3>Cara Pengerjaan</h3><ol><li>Tulis tiap digit heksa sebagai 4 bit menurut tabel.</li><li>Gabungkan semua kelompok.</li><li>Hapus nol di sisi paling kiri (bagian bulat) atau paling kanan (bagian pecahan) yang tidak bermakna.</li></ol><h3>Contoh Soal</h3><p><b>Soal 1.</b> 3F₁₆ → 0011 | 1111 = <b>111111₂</b></p><p><b>Soal 2.</b> A5C₁₆ → 1010 | 0101 | 1100 = <b>101001011100₂</b></p><p><b>Soal 3.</b> 7B,E₁₆ → 0111 | 1011 , 1110 = <b>1111011,111₂</b></p><p><b>Soal 4.</b> 2024₁₆ → 0010 | 0000 | 0010 | 0100 = <b>10000000100100₂</b></p><p><b>Soal 5.</b> DEAD₁₆ → 1101 | 1110 | 1010 | 1101 = <b>1101111010101101₂</b></p></section>
+<section id="od"><h2>🔢 5. Konversi Oktal (Basis 8) ke Desimal (Basis 10)</h2><h3>Pengertian</h3><p>Sistem oktal memakai digit 0–7. Konversi ke desimal dilakukan dengan menjumlahkan hasil kali tiap digit dengan bobot 8ⁱ pada posisinya. Prinsipnya sama dengan biner, hanya basisnya 8 <b>(Rosen, 2019 [9]; Munir, 2012 [10]; Knuth, 1997 [11])</b>. Oktal pernah populer pada komputer lama dan masih dipakai pada izin akses berkas sistem Unix/Linux <b>(Stallings, 2016 [4]; Wikipedia, "Octal" [13])</b>.</p><h3>Rumus</h3><pre>(dₙ … d₁ d₀ , d₋₁ …)₈ = Σ dᵢ × 8ⁱ</pre><p>Bobot: …4096, 512, 64, 8, 1 , 1/8, 1/64, …</p><h3>Cara Pengerjaan</h3><p>Kalikan tiap digit dengan 8ⁱ, lalu jumlahkan semuanya. Alternatifnya, pakai metode Horner dengan pengali 8.</p><h3>Contoh Soal</h3><p><b>Soal 1.</b> 745₈ = 7·64 + 4·8 + 5·1 = 448 + 32 + 5 = <b>485₁₀</b></p><p><b>Soal 2.</b> 1234₈ = 1·512 + 2·64 + 3·8 + 4 = 512 + 128 + 24 + 4 = <b>668₁₀</b></p><p><b>Soal 3.</b> 377₈ = 3·64 + 7·8 + 7 = 192 + 56 + 7 = <b>255₁₀</b></p><p><b>Soal 4 (pecahan).</b> 17,5₈ = 1·8 + 7 + 5/8 = 15 + 0,625 = <b>15,625₁₀</b></p><p><b>Soal 5 (pecahan).</b> 0,24₈ = 2/8 + 4/64 = 0,25 + 0,0625 = <b>0,3125₁₀</b></p><p><b>Soal 6 (Horner).</b> 745₈: 7 → 7×8+4 = 60 → 60×8+5 = <b>485₁₀</b> ✔</p></section>
+<section id="do"><h2>🔄 6. Konversi Desimal (Basis 10) ke Oktal (Basis 8)</h2><h3>Pengertian</h3><p>Prinsipnya sama dengan konversi desimal ke biner, tetapi pembagi dan pengalinya diganti 8. Prosedur pembagian berulang ini berlaku umum untuk basis apa pun <b>(Rosen, 2019 [9]; Knuth, 1997 [11]; Munir, 2012 [10]; Tocci dkk., 2016 [3])</b>.</p><h3>Rumus / Aturan</h3><p><b>Bagian bulat:</b> bagi dengan 8 berulang, lalu baca sisa dari bawah ke atas.</p><p><b>Bagian pecahan:</b> kalikan dengan 8 berulang, lalu ambil bagian bulat dari atas ke bawah.</p><h3>Contoh Soal</h3><p><b>Soal 1.</b> Ubah 485₁₀ ke oktal.</p><div class="tw"><table><tr><th>Pembagian</th><th>Hasil</th><th>Sisa</th></tr><tr><td>485 ÷ 8</td><td>60</td><td>5</td></tr><tr><td>60 ÷ 8</td><td>7</td><td>4</td></tr><tr><td>7 ÷ 8</td><td>0</td><td>7</td></tr></table></div><p>Dibaca dari bawah ke atas: <b>745₈</b> ✔</p><p><b>Soal 2.</b> Ubah 1000₁₀ ke oktal.</p><div class="tw"><table><tr><th>Pembagian</th><th>Hasil</th><th>Sisa</th></tr><tr><td>1000 ÷ 8</td><td>125</td><td>0</td></tr><tr><td>125 ÷ 8</td><td>15</td><td>5</td></tr><tr><td>15 ÷ 8</td><td>1</td><td>7</td></tr><tr><td>1 ÷ 8</td><td>0</td><td>1</td></tr></table></div><p>Dibaca dari bawah ke atas: <b>1750₈</b>. Pemeriksaan: 512 + 448 + 40 = 1000 ✔</p><p><b>Soal 3.</b> Ubah 255₁₀ ke oktal.</p><div class="tw"><table><tr><th>Pembagian</th><th>Hasil</th><th>Sisa</th></tr><tr><td>255 ÷ 8</td><td>31</td><td>7</td></tr><tr><td>31 ÷ 8</td><td>3</td><td>7</td></tr><tr><td>3 ÷ 8</td><td>0</td><td>3</td></tr></table></div><p>Dibaca dari bawah ke atas: <b>377₈</b></p><p><b>Soal 4 (pecahan).</b> Ubah 0,625₁₀ ke oktal.</p><div class="tw"><table><tr><th>Perkalian</th><th>Hasil</th><th>Digit</th></tr><tr><td>0,625 × 8</td><td>5,0</td><td>5</td></tr></table></div><p>Hasil: <b>0,5₈</b></p><p><b>Soal 5 (campuran).</b> Ubah 25,1875₁₀ ke oktal.</p><p>Bagian bulat (dibagi 8, sisa dibaca dari bawah ke atas):</p><div class="tw"><table><tr><th>Pembagian</th><th>Hasil</th><th>Sisa</th></tr><tr><td>25 ÷ 8</td><td>3</td><td>1</td></tr><tr><td>3 ÷ 8</td><td>0</td><td>3</td></tr></table></div><p>Bagian pecahan (dikali 8, digit dibaca dari atas ke bawah):</p><div class="tw"><table><tr><th>Perkalian</th><th>Hasil</th><th>Digit</th></tr><tr><td>0,1875 × 8</td><td>1,5</td><td>1</td></tr><tr><td>0,5 × 8</td><td>4,0</td><td>4</td></tr></table></div><p>Bagian bulat = 31₈ dan bagian pecahan = 0,14₈. Hasil: <b>31,14₈</b> (pemeriksaan: 25 + 0,125 + 0,0625 = 25,1875 ✔)</p></section>
+<section id="beda"><h2>🔍 7. Perbedaan Sistem Bilangan Oktal (Basis 8) dengan Heksadesimal (Basis 16)</h2><h3>Pengertian</h3><p>Oktal dan heksadesimal sama-sama merupakan notasi ringkas untuk bilangan biner. Satu digit oktal mewakili 3 bit (8 = 2³), sedangkan satu digit heksa mewakili 4 bit (16 = 2⁴) <b>(Mano &amp; Ciletti, 2013 [1]; Null &amp; Lobur, 2014 [7]; Wakerly, 2006 [6])</b>. Karena ukuran byte modern adalah 8 bit, heksa lebih praktis: 1 byte tepat 2 digit heksa. Sebaliknya, 1 byte tidak habis dibagi 3 bit, sehingga memerlukan 3 digit oktal dengan digit pertama hanya bernilai 0–3 <b>(Tanenbaum &amp; Austin, 2013 [5]; Patterson &amp; Hennessy, 2014 [8])</b>. Informasi pembanding juga tersedia pada <b>(Wikipedia, "Octal" [13]; Wikipedia, "Hexadecimal" [14]; Weisstein, "Base", MathWorld [15])</b>.</p><h3>Tabel Perbedaan</h3><div class="tw"><table><tr><th>Aspek</th><th>Oktal (Basis 8)</th><th>Heksadesimal (Basis 16)</th></tr><tr><td>Basis</td><td>8</td><td>16</td></tr><tr><td>Simbol</td><td>0–7 (8 simbol)</td><td>0–9 dan A–F (16 simbol)</td></tr><tr><td>Setara biner</td><td>3 bit per digit</td><td>4 bit per digit</td></tr><tr><td>Pengelompokan dari biner</td><td>3-3 dari kanan</td><td>4-4 dari kanan</td></tr><tr><td>Nilai 1 byte (8 bit)</td><td>000–377 (3 digit)</td><td>00–FF (2 digit)</td></tr><tr><td>Keringkasan</td><td>Kurang ringkas</td><td>Lebih ringkas</td></tr><tr><td>Kecocokan dengan ukuran data modern (8/16/32/64 bit)</td><td>Kurang cocok</td><td>Sangat cocok</td></tr><tr><td>Penggunaan khas</td><td>Izin berkas Unix/Linux (misal chmod 755), komputer lama</td><td>Alamat memori, kode warna web (#FF5733), alamat MAC, machine code, debugging</td></tr><tr><td>Contoh nilai</td><td>255₁₀ = 377₈</td><td>255₁₀ = FF₁₆</td></tr><tr><td>Contoh nilai</td><td>485₁₀ = 745₈</td><td>485₁₀ = 1E5₁₆</td></tr></table></div><h3>Contoh Soal Perbandingan</h3><p><b>Soal 1.</b> Nyatakan 11110101₂ dalam oktal dan heksa. Oktal (3-3 dari kanan, padding): 011 | 110 | 101 → <b>365₈</b>. Heksa (4-4): 1111 | 0101 → <b>F5₁₆</b>. Pemeriksaan: keduanya bernilai 245₁₀ ✔</p><p><b>Soal 2.</b> Ubah 745₈ ke heksa lewat biner. 745₈ → 111 | 100 | 101 = 111100101₂ → padding 0001 | 1110 | 0101 → <b>1E5₁₆</b> (= 485₁₀ ✔)</p><p><b>Soal 3.</b> Ubah 2F₁₆ ke oktal lewat biner. 2F₁₆ → 0010 | 1111 = 101111₂ → 101 | 111 → <b>57₈</b> (= 47₁₀ ✔)</p></section>
+<section id="kuis"><h2>🧪 Latihan Soal</h2><p>Pilih satu jawaban. Hijau berarti benar, merah berarti salah, dan penjelasan akan muncul.</p><div id="daftar-soal"></div><p id="skor" style="font-weight:bold;font-size:18px"></p><button id="ulang" style="display:none">🔄 Ulangi Latihan</button></section>
+<section id="kesimpulan"><h2>📝 Kesimpulan</h2><p>Semua konversi bertumpu pada satu ide: nilai angka bergantung pada posisinya, dengan bobot berupa pangkat dari basis.</p><ul><li><b>Biner/oktal ke desimal:</b> jumlahkan hasil kali tiap digit dengan bobot posisinya (2ⁱ atau 8ⁱ), atau pakai metode Horner.</li><li><b>Desimal ke biner/oktal:</b> bagian bulat dengan pembagian berulang (sisa dibaca dari bawah ke atas), bagian pecahan dengan perkalian berulang (digit dibaca dari atas ke bawah).</li><li><b>Biner dan heksadesimal:</b> cukup mengelompokkan 4 bit per digit, tanpa hitungan aritmetika.</li><li><b>Oktal vs heksa:</b> oktal mewakili 3 bit per digit, heksa 4 bit per digit. Karena 1 byte = 8 bit, heksa lebih ringkas dan lebih cocok untuk komputer modern.</li><li><b>Catatan penting:</b> sebagian pecahan desimal, seperti 0,1₁₀, berulang tak berhingga dalam biner sehingga tidak bisa disimpan secara eksak di komputer.</li></ul></section>
+<section id="referensi"><h2>📖 Daftar Pustaka</h2><h3>Buku</h3><ol class="ref"><li>Mano, M. M., &amp; Ciletti, M. D. (2013). <i>Digital Design: With an Introduction to the Verilog HDL</i> (5th ed.). Pearson. (Bab 1: Digital Systems and Binary Numbers)</li><li>Floyd, T. L. (2015). <i>Digital Fundamentals</i> (11th ed.). Pearson. (Bab 2: Number Systems, Operations, and Codes)</li><li>Tocci, R. J., Widmer, N. S., &amp; Moss, G. L. (2016). <i>Digital Systems: Principles and Applications</i> (12th ed.). Pearson. (Bab 1)</li><li>Stallings, W. (2016). <i>Computer Organization and Architecture: Designing for Performance</i> (10th ed.). Pearson.</li><li>Tanenbaum, A. S., &amp; Austin, T. (2013). <i>Structured Computer Organization</i> (6th ed.). Pearson. (Lampiran: Binary Numbers)</li><li>Wakerly, J. F. (2006). <i>Digital Design: Principles and Practices</i> (4th ed.). Pearson. (Bab 2: Number Systems and Codes)</li><li>Null, L., &amp; Lobur, J. (2014). <i>The Essentials of Computer Organization and Architecture</i> (4th ed.). Jones &amp; Bartlett Learning. (Bab 2: Data Representation)</li><li>Patterson, D. A., &amp; Hennessy, J. L. (2014). <i>Computer Organization and Design: The Hardware/Software Interface</i> (5th ed.). Morgan Kaufmann.</li><li>Rosen, K. H. (2019). <i>Discrete Mathematics and Its Applications</i> (8th ed.). McGraw-Hill. (Subbab 4.2: Integer Representations and Algorithms)</li><li>Munir, R. (2012). <i>Matematika Diskrit</i> (Rev. ke-5). Bandung: Informatika. (Bab Teori Bilangan: sistem bilangan dan konversi basis)</li><li>Knuth, D. E. (1997). <i>The Art of Computer Programming, Vol. 2: Seminumerical Algorithms</i> (3rd ed.). Addison-Wesley. (Subbab 4.1: Positional Number Systems)</li></ol><h3>Sumber Web</h3><ol class="ref" start="12"><li>Wikipedia. "Binary number." https://en.wikipedia.org/wiki/Binary_number</li><li>Wikipedia. "Octal." https://en.wikipedia.org/wiki/Octal</li><li>Wikipedia. "Hexadecimal." https://en.wikipedia.org/wiki/Hexadecimal</li><li>Weisstein, E. W. "Base." <i>MathWorld</i>, Wolfram Research. https://mathworld.wolfram.com/Base.html</li></ol></section>
+<div class="nav2"><button id="sebelum" class="alur-btn"></button><button class="kembali">Menu</button><button id="lanjut" class="alur-btn"></button></div>
+</main>
+<div id="ombak" aria-hidden="true"><div class="tepi a"><svg viewBox="0 0 1200 120" preserveAspectRatio="none"><path fill="#3b82f6" d="M0,60 C100,20 200,100 300,60 S500,100 600,60 C700,20 800,100 900,60 S1100,100 1200,60 V120 H0Z"/></svg></div><div class="tepi b"><svg viewBox="0 0 1200 120" preserveAspectRatio="none"><path fill="#1d4ed8" d="M0,60 C100,20 200,100 300,60 S500,100 600,60 C700,20 800,100 900,60 S1100,100 1200,60 V120 H0Z"/></svg></div>🌊</div>
+<footer><p>Blog Sistem Bilangan Komputer</p></footer>
 <script>
 (function(){
 var soal=[
-{q:"1. Hasil konversi 45₁₀ ke bilangan biner adalah...",
- o:["101011₂","101101₂","110101₂","100111₂"],a:1,
- p:"Bagi 45 dengan 2 berulang dan catat sisanya:\n45÷2=22 sisa 1; 22÷2=11 sisa 0; 11÷2=5 sisa 1; 5÷2=2 sisa 1; 2÷2=1 sisa 0; 1÷2=0 sisa 1.\nBaca sisa dari bawah ke atas: 101101.\nCek balik: 32+8+4+1 = 45."},
-{q:"2. Bilangan 3A₁₆ jika diubah ke biner menjadi...",
- o:["00111010₂","10100011₂","00110101₂","01011010₂"],a:0,
- p:"Satu digit heksadesimal sama dengan 4 digit biner.\n3 = 0011 dan A (10) = 1010. Gabungkan: 0011 1010.\nCek balik: 3A₁₆ = 3×16+10 = 58, dan 00111010₂ = 32+16+8+2 = 58."},
-{q:"3. Nilai desimal dari bilangan oktal 745₈ adalah...",
- o:["365","455","485","745"],a:2,
+{q:"1. Nilai desimal dari 110101₂ adalah...",o:["43₁₀","51₁₀","53₁₀","57₁₀"],a:2,
+ p:"Bobot dari kiri ke kanan: 32, 16, 8, 4, 2, 1. Digit 1 berada pada bobot 32, 16, 4, dan 1.\nJumlahkan: 32+16+4+1 = 53."},
+{q:"2. Hasil konversi 156₁₀ ke biner adalah...",o:["10011100₂","10011010₂","11001100₂","10101100₂"],a:0,
+ p:"Bagi 156 dengan 2 berulang: 156→78 sisa 0; 78→39 sisa 0; 39→19 sisa 1; 19→9 sisa 1; 9→4 sisa 1; 4→2 sisa 0; 2→1 sisa 0; 1→0 sisa 1.\nBaca sisa dari bawah ke atas: 10011100.\nPemeriksaan: 128+16+8+4 = 156."},
+{q:"3. Bilangan 11010110₂ jika diubah ke heksadesimal menjadi...",o:["B6₁₆","D6₁₆","D3₁₆","6D₁₆"],a:1,
+ p:"Kelompokkan 4 bit dari kanan: 1101 | 0110.\n1101 = D dan 0110 = 6, sehingga hasilnya D6₁₆.\nPemeriksaan: 13×16+6 = 214, dan 11010110₂ = 214₁₀."},
+{q:"4. Nilai desimal dari bilangan oktal 745₈ adalah...",o:["365","455","485","745"],a:2,
  p:"Kalikan tiap digit dengan 8 pangkat posisinya:\n7×8² = 448; 4×8¹ = 32; 5×8⁰ = 5.\nJumlahkan: 448+32+5 = 485.\nPilihan 745 adalah jebakan karena angka itu bernilai oktal, bukan desimal."},
-{q:"4. Nilai desimal dari 101,011₂ adalah...",
- o:["5,375","5,75","5,125","6,375"],a:0,
- p:"Digit sebelum koma berpangkat positif, setelah koma berpangkat negatif.\nBagian bulat: 4+0+1 = 5.\nBagian pecahan: 0×0,5 + 1×0,25 + 1×0,125 = 0,375.\nTotal: 5,375."},
-{q:"5. Bilangan 8 bit bertanda (komplemen-2) tertulis 11110100₂. Nilai desimalnya adalah...",
- o:["244","-12","-116","-244"],a:1,
- p:"Bit paling kiri bernilai 1, jadi bilangan ini negatif.\nCara 1: balik semua bit menjadi 00001011, tambah 1 menjadi 00001100 = 12, maka hasilnya -12.\nCara 2: -128+64+32+16+4 = -12.\nPilihan 244 adalah nilai jika dibaca tanpa tanda, padahal soal menyebut bilangan bertanda."}
+{q:"5. Hasil konversi 255₁₀ ke oktal adalah...",o:["377₈","357₈","477₈","773₈"],a:0,
+ p:"Bagi dengan 8 berulang: 255÷8=31 sisa 7; 31÷8=3 sisa 7; 3÷8=0 sisa 3.\nBaca dari bawah ke atas: 377₈.\nPemeriksaan: 3×64+7×8+7 = 192+56+7 = 255."},
+{q:"6. Hasil konversi 0,6875₁₀ ke biner adalah...",o:["0,1101₂","0,1011₂","0,0111₂","0,1110₂"],a:1,
+ p:"Kalikan pecahan dengan 2 berulang dan ambil bagian bulatnya:\n0,6875×2=1,375 → 1; 0,375×2=0,75 → 0; 0,75×2=1,5 → 1; 0,5×2=1,0 → 1.\nBaca dari atas ke bawah: 0,1011₂.\nPemeriksaan: 0,5+0,125+0,0625 = 0,6875."}
 ];
 var wadah=document.getElementById("daftar-soal");
 var skorEl=document.getElementById("skor");
@@ -283,38 +181,63 @@ tombolUlang.addEventListener("click",mulai);
 mulai();
 })();
 </script>
-</section>
-
-<section id="kesimpulan">
-<h2>📝 Kesimpulan</h2>
-<p>Biner adalah dasar representasi data komputer. Oktal dan heksadesimal adalah penulisan ringkas untuk biner yang panjang, sedangkan desimal akrab bagi manusia. Memahami konversi, komplemen-2, dan floating point membantu menghindari kesalahan seperti overflow dan galat pembulatan.</p>
-</section>
-
-<section id="referensi">
-<h2>📖 Daftar Referensi</h2>
-<ol class="ref">
-<li>Mano, M. M., &amp; Ciletti, M. D. (2017). <i>Digital Design: With an Introduction to the Verilog HDL, VHDL, and SystemVerilog</i> (6th ed.). Pearson.</li>
-<li>Knuth, D. E. (1997). <i>The Art of Computer Programming, Vol. 2: Seminumerical Algorithms</i> (3rd ed.). Addison-Wesley.</li>
-<li>Stallings, W. (2016). <i>Computer Organization and Architecture</i> (10th ed.). Pearson.</li>
-<li>Patterson, D. A., &amp; Hennessy, J. L. (2020). <i>Computer Organization and Design RISC-V Edition</i> (2nd ed.). Morgan Kaufmann.</li>
-<li>Null, L., &amp; Lobur, J. (2018). <i>The Essentials of Computer Organization and Architecture</i> (5th ed.). Jones &amp; Bartlett Learning.</li>
-<li>Floyd, T. L. (2015). <i>Digital Fundamentals</i> (11th ed.). Pearson.</li>
-<li>Tanenbaum, A. S., &amp; Austin, T. (2012). <i>Structured Computer Organization</i> (6th ed.). Pearson.</li>
-<li>Harris, S. L., &amp; Harris, D. M. (2021). <i>Digital Design and Computer Architecture: RISC-V Edition</i>. Morgan Kaufmann.</li>
-<li>Bryant, R. E., &amp; O'Hallaron, D. R. (2016). <i>Computer Systems: A Programmer's Perspective</i> (3rd ed.). Pearson.</li>
-<li>Ifrah, G. (2000). <i>The Universal History of Numbers</i>. John Wiley &amp; Sons.</li>
-<li>Goldberg, D. (1991). What every computer scientist should know about floating-point arithmetic. <i>ACM Computing Surveys, 23</i>(1), 5-48. https://doi.org/10.1145/103162.103163</li>
-<li>Shannon, C. E. (1938). A symbolic analysis of relay and switching circuits. <i>Transactions of the AIEE, 57</i>(12), 713-723.</li>
-<li>Leibniz, G. W. (1703). Explication de l'arithmétique binaire. <i>Mémoires de l'Académie Royale des Sciences</i>.</li>
-<li>IEEE. (2019). <i>IEEE Std 754-2019: IEEE Standard for Floating-Point Arithmetic</i>. IEEE.</li>
-<li>Python Software Foundation. (n.d.). <i>The Python Standard Library: Built-in Types</i>. https://docs.python.org/3/library/stdtypes.html</li>
-</ol>
-<p><small>Catatan: periksa edisi, tahun, dan halaman melalui katalog perpustakaan atau situs penerbit sebelum dipakai untuk tugas resmi.</small></p>
-</section>
-
-</main>
-<footer><p>Blog Sistem Bilangan Komputer</p></footer>
-
-
+<script>
+(function(){
+var urut=[["konsep"],["bd"],["db"],["bh"],["hb"],["od"],["do"],["beda"],["kuis"],["kesimpulan","referensi"]];
+var judul=["Konsep Dasar","Biner ke Desimal","Desimal ke Biner","Biner ke Heksa","Heksa ke Biner","Oktal ke Desimal","Desimal ke Oktal","Oktal vs Heksa","Latihan Soal","Kesimpulan & Referensi"];
+var now=0,sibuk=false;
+var home=document.getElementById("home"),isi=document.getElementById("isi"),om=document.getElementById("ombak"),alur=document.getElementById("alur");
+function pindah(aksi){
+ if(sibuk)return;
+ if(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches){aksi();return}
+ sibuk=true;om.style.pointerEvents="auto";
+ om.style.transition="none";om.style.transform="translateY(calc(100% + 90px))";om.offsetHeight;
+ om.style.transition="transform .75s cubic-bezier(.65,0,.35,1)";om.style.transform="translateY(0)";
+ setTimeout(function(){
+  aksi();
+  om.style.transform="translateY(calc(-100% - 90px))";
+  setTimeout(function(){sibuk=false;om.style.pointerEvents="none"},800);
+ },800);
+}
+function tutup(){document.querySelectorAll("section.show").forEach(function(s){s.classList.remove("show")})}
+function tampil(i){
+ now=i;tutup();
+ urut[i].forEach(function(id){document.getElementById(id).classList.add("show")});
+ document.getElementById("posisi").textContent="Materi "+(i+1)+" dari "+judul.length+": "+judul[i];
+ [].forEach.call(alur.children,function(b,k){b.className=k===i?"aktif":(k<i?"lewat":"")});
+ var s=document.getElementById("sebelum"),l=document.getElementById("lanjut"),a=i>0,z=i<judul.length-1;
+ s.style.visibility=a?"visible":"hidden";s.textContent=a?"← "+judul[i-1]:"";
+ l.style.visibility=z?"visible":"hidden";l.textContent=z?"Lanjut: "+judul[i+1]+" →":"";
+ window.scrollTo(0,0);
+}
+judul.forEach(function(t,i){
+ var b=document.createElement("button");b.textContent=i+1;b.title=t;
+ b.addEventListener("click",function(){if(i!==now)pindah(function(){tampil(i)})});
+ alur.appendChild(b);
+});
+document.querySelectorAll(".menu button").forEach(function(b,i){
+ b.addEventListener("click",function(){
+  pindah(function(){tampil(i);home.style.display="none";isi.style.display="block"});
+ });
+});
+document.querySelectorAll(".kembali").forEach(function(b){
+ b.addEventListener("click",function(){
+  pindah(function(){tutup();isi.style.display="none";home.style.display="flex";window.scrollTo(0,0)});
+ });
+});
+document.getElementById("sebelum").addEventListener("click",function(){if(now>0)pindah(function(){tampil(now-1)})});
+document.getElementById("lanjut").addEventListener("click",function(){if(now<judul.length-1)pindah(function(){tampil(now+1)})});
+})();
+</script>
+<script>
+(function(){
+for(var i=0;i<14;i++){
+ var s=document.createElement("span"),z=8+Math.random()*18;
+ s.className="gelembung";
+ s.style.cssText="left:"+(Math.random()*98)+"%;width:"+z+"px;height:"+z+"px;animation-duration:"+(9+Math.random()*10)+"s;animation-delay:-"+(Math.random()*14)+"s";
+ document.body.appendChild(s);
+}
+})();
+</script>
 </body>
 </html>
